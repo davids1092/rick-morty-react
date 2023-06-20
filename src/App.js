@@ -12,12 +12,13 @@ function App() {
     // console.log(characterApi)
     setCharacters(characterApi.results);
   };
+   
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="title"> Rick & Morty </h1>
         {characters ? (
-          <Characters characters={characters} />
+          <Characters characters={characters} setCharacters={setCharacters} />
         ) : (
           <>
             <img className="img-home" alt="Rick & Morty" src={img} />

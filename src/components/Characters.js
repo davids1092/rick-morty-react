@@ -1,12 +1,15 @@
 import React from 'react'
 import '../styles-pages/Characters.css'
 export default function Characters(props) {
-  const {characters} = props
+  const {characters, setCharacters} = props
+  const volverHome = () => {
+    setCharacters(null)
+   }
   console.log('personajes', characters)
   return (
     <div className='characters'>
         <h1>Personajes</h1>
-        <span className='back-home'>Volver a home</span>
+        <span onClick={volverHome} className='back-home'>Volver a home</span>
         <div className='container-characters'>
           {characters.map((character, index) => (
             <div className='character-container' key={index}>
@@ -32,10 +35,15 @@ export default function Characters(props) {
                     <span className='text-grey'> Episodios: </span>
                     <span> {character.episode.length} </span>
                   </p>
+                  <p>
+                    <span className='text-grey'> Especie: </span>
+                    <span> {character.species} </span>
+                  </p>
                 </div>
             </div>
           ))}
         </div>
+        <span onClick={volverHome} className='back-home'>Volver a home</span>
     </div>
   )
 }

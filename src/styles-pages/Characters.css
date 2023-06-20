@@ -1,9 +1,11 @@
 .characters {
     padding: 50px;
+
   }
   
   .characters h1 {
     margin-top: 0;
+    text-align: center  ;
   }
   
   .container-characters {
